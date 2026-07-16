@@ -1,0 +1,19 @@
+{
+  "name": "Menstrual Cycle Calculator",
+  "short_name": "CycleCalc",
+  "description": "Track your menstrual cycle, ovulation, and fertile window easily.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ec4899",
+  "orientation": "portrait",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
