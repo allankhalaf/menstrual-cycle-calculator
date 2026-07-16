@@ -16,6 +16,18 @@
     <div id="root"></div>
     <script>
       if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(regs => {
+          regs.forEach(reg => {
+            const desiredScope = location.pathname.replace(/\/$/, '') + '/';
+            if (!reg.scope.includes(desiredScope)) {
+              reg.unregister().then(() => console.log('Unregistered old service worker', reg.scope));
+            }
+          });
+        }).catch(() => {});
+      }
+    </script>
+    <script>
+      if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
             navigator.serviceWorker.register('sw.js')
             .then(reg => console.log('SW registered'))
